@@ -2,7 +2,7 @@ import React from "react";
 
 const Button = (props) => {
   return (
-    <button className="bg-slate-200 text-black rounded-md py-4 px-3 transition-transform  translate-y-[-1rem] w-3/4 m-auto group-hover:translate-x-2 group-hover:bg-slate-300 group-hover:duration-700 group-hover:rounded-2xl group-hover:shadow-custom ">
+    <button className="group-hover:shadow-custom m-auto w-3/4 translate-y-[-1rem] rounded-md bg-slate-200 px-3 py-4 text-black transition-transform group-hover:translate-x-2 group-hover:rounded-2xl group-hover:bg-slate-300 group-hover:duration-700">
       {props.text}
     </button>
   );

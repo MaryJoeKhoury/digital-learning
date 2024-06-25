@@ -10,9 +10,14 @@ html {
 @layer components {
   @media (min-width: 640px) and (max-width: 1024px) {
     .alignement {
-      @apply max-w-2xl m-auto;
+      @apply m-auto max-w-2xl;
     }
     .flexgrow {
+      @apply flex-grow;
+    }
+  }
+  @media (max-width: 1280px) {
+    .flexgrowimg {
       @apply flex-grow;
     }
   }
@@ -21,7 +26,7 @@ html {
       @apply justify-center;
     }
     .desc {
-      @apply w-1/2 mb-8;
+      @apply mb-8 w-1/2;
     }
     .sm-alignement {
       @apply max-w-sm;

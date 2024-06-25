@@ -1,15 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Navigation = () => {
   const [menuActive, setMenuActive] = useState(false);
+  const [navBar, setNavBar] = useState(false);
 
   const handleMobileMenu = () => {
     setMenuActive(!menuActive);
   };
 
+  useEffect(() => {
+    const changeNavBackGround = () => {
+      const isVisible = window.scrollY >= 76;
+      setNavBar(isVisible);
+    };
+    window.addEventListener("scroll", changeNavBackGround);
+
+    return () => window.removeEventListener("scroll", changeNavBackGround);
+  }, []);
+
   return (
-    <div className="fixed w-full z-10">
-      <nav className="xl:max-w-5xl hidden sm:flex flex-row justify-between items-center text-xl w-full z-1 2xl:max-w-7xl m-auto alignement bg-opacity-70 bg-brown-wood">
+    <div
+      className={
+        navBar
+          ? "fixed z-10 w-full bg-brown-wood bg-opacity-70"
+          : "fixed z-10 w-full"
+      }
+    >
+      <nav className="z-1 alignement m-auto hidden w-full flex-row items-center justify-between text-xl sm:flex xl:max-w-7xl">
         <div className="flex flex-col align-middle">
           <img
             src="./icons/e-learning-on-computer.svg"
@@ -18,15 +35,19 @@ const Navigation = () => {
           />
           <a href="#">
             <p>
-              E-<span className="text-white">Learning</span>
+              E-<span className="font-bold text-black">Learning</span>
             </p>
           </a>
         </div>
-        <ul className="flex flex-row list-none">
+        <ul className="flex list-none flex-row">
           <li className="mr-12">
             <a
               href="#"
-              className="relative text-white hover:text-black after:absolute after:bottom-[-10px] after:left-0 after:h-[3px] after:w-0 after:bg-black after:transition-all after:duration-700 hover:after:w-full"
+              className={
+                navBar
+                  ? "relative font-bold text-black after:absolute after:bottom-[-10px] after:left-0 after:h-[3px] after:w-0 after:bg-black after:transition-all after:duration-700 hover:text-black hover:after:w-full"
+                  : "relative font-bold text-white after:absolute after:bottom-[-10px] after:left-0 after:h-[3px] after:w-0 after:bg-white after:transition-all after:duration-700 hover:text-white hover:after:w-full"
+              }
             >
               Home
             </a>
@@ -34,7 +55,11 @@ const Navigation = () => {
           <li className="mr-12">
             <a
               href="#about-us"
-              className="relative text-white hover:text-black after:absolute after:bottom-[-10px] after:left-0 after:h-[3px] after:w-0 after:bg-black after:transition-all after:duration-700 hover:after:w-full"
+              className={
+                navBar
+                  ? "relative font-bold text-black after:absolute after:bottom-[-10px] after:left-0 after:h-[3px] after:w-0 after:bg-black after:transition-all after:duration-700 hover:text-black hover:after:w-full"
+                  : "relative font-bold text-white after:absolute after:bottom-[-10px] after:left-0 after:h-[3px] after:w-0 after:bg-white after:transition-all after:duration-700 hover:text-white hover:after:w-full"
+              }
             >
               About Us
             </a>
@@ -42,7 +67,11 @@ const Navigation = () => {
           <li className="mr-12">
             <a
               href="#pricing-cards"
-              className="relative text-white hover:text-black after:absolute after:bottom-[-10px] after:left-0 after:h-[3px] after:w-0 after:bg-black after:transition-all after:duration-700 hover:after:w-full"
+              className={
+                navBar
+                  ? "relative font-bold text-black after:absolute after:bottom-[-10px] after:left-0 after:h-[3px] after:w-0 after:bg-black after:transition-all after:duration-700 hover:text-black hover:after:w-full"
+                  : "relative font-bold text-white after:absolute after:bottom-[-10px] after:left-0 after:h-[3px] after:w-0 after:bg-white after:transition-all after:duration-700 hover:text-white hover:after:w-full"
+              }
             >
               Pricing
             </a>
@@ -50,7 +79,11 @@ const Navigation = () => {
           <li className="mr-0">
             <a
               href="#contact-us"
-              className="relative text-white hover:text-black after:absolute after:bottom-[-10px] after:left-0 after:h-[3px] after:w-0 after:bg-black after:transition-all after:duration-700 hover:after:w-full"
+              className={
+                navBar
+                  ? "relative font-bold text-black after:absolute after:bottom-[-10px] after:left-0 after:h-[3px] after:w-0 after:bg-black after:transition-all after:duration-700 hover:text-black hover:after:w-full"
+                  : "relative font-bold text-white after:absolute after:bottom-[-10px] after:left-0 after:h-[3px] after:w-0 after:bg-white after:transition-all after:duration-700 hover:text-white hover:after:w-full"
+              }
             >
               Contact Us
             </a>
@@ -58,9 +91,9 @@ const Navigation = () => {
         </ul>
       </nav>
       <div
-        className={`sm:hidden fixed top-0 right-0 bg-brown-wood bg-opacity-80 h-screen w-full max-w-xs flex flex-col items-center justify-center text-center text-2xl transform ${
+        className={`fixed right-0 top-0 flex h-screen w-full max-w-xs transform flex-col items-center justify-center bg-brown-wood bg-opacity-80 text-center text-2xl sm:hidden ${
           menuActive ? "translate-x-0" : "translate-x-full"
-        } transition-transform duration-300 ease-in-out z-10`}
+        } z-10 transition-transform duration-300 ease-in-out`}
       >
         <ul className="space-y-10">
           <li>
@@ -85,17 +118,17 @@ const Navigation = () => {
           </li>
         </ul>
       </div>
-      <nav className="sm:hidden fixed top-0 right-0 p-4 z-20">
+      <nav className="fixed right-0 top-0 z-20 p-4 sm:hidden">
         <div
-          className={`w-10 h-12 relative cursor-pointer ${
+          className={`relative h-12 w-10 cursor-pointer ${
             menuActive ? "active" : ""
           }`}
           id="ham-menu"
           onClick={handleMobileMenu}
         >
-          <span className="block absolute left-1/2 w-full h-1 bg-black rounded transform transition-all duration-300 top-1/4 -translate-x-1/2"></span>
-          <span className="block absolute left-1/2 w-full h-1 bg-black rounded transition-opacity duration-300 top-1/2 -translate-x-1/2"></span>
-          <span className="block absolute left-1/2 w-full h-1 bg-black rounded transform transition-all duration-300 top-3/4 -translate-x-1/2"></span>
+          <span className="absolute left-1/2 top-1/4 block h-1 w-full -translate-x-1/2 transform rounded bg-black transition-all duration-300"></span>
+          <span className="absolute left-1/2 top-1/2 block h-1 w-full -translate-x-1/2 rounded bg-black transition-opacity duration-300"></span>
+          <span className="absolute left-1/2 top-3/4 block h-1 w-full -translate-x-1/2 transform rounded bg-black transition-all duration-300"></span>
         </div>
       </nav>
     </div>

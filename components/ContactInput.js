@@ -7,18 +7,18 @@ const ContactInput = (props) => {
       <textarea
         placeholder={props.placeholder}
         required
-        className="w-full h-96 rounded-md my-4 outline-none border-slate-800 border-solid border-2 m-auto p-3 "
+        className="m-auto my-4 h-96 w-full rounded-md border-2 border-solid border-slate-800 p-3 outline-none"
       />
     );
 
   return (
-    <div className=" w-full ">
+    <div className="w-full">
       <input
         type={props.type}
         name={props.name}
         placeholder={props.placeholder}
         required
-        className="w-full my-4 outline-none border-slate-800 border-solid border-b-2 p-3 "
+        className="my-4 w-full border-b-2 border-solid border-slate-800 p-3 outline-none"
       />
     </div>
   );

@@ -2,7 +2,7 @@ import React from "react";
 
 const Cards = (props) => {
   return (
-    <div className="flex flex-col  flexgrow  align-middle justify-center text-center hover:cursor-pointer mt-12 w-96 group">
+    <div className="flexgrow group mt-12 flex w-96 flex-col justify-center text-center align-middle hover:cursor-pointer">
       {props.children}
     </div>
   );

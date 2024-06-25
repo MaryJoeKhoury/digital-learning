@@ -3,9 +3,9 @@ import SectionTitle from "./SectionTitle";
 
 const CardContainer = (props) => {
   return (
-    <div className=" alignement xl:max-w-7xl m-auto " id="pricing-cards">
+    <div className="alignement m-auto xl:max-w-7xl" id="pricing-cards">
       <SectionTitle title="Princing Cards" />
-      <div className="flex align-middle flex-row cards  lg:justify-between flex-wrap mt-4">
+      <div className="cards mt-4 flex flex-row flex-wrap align-middle lg:justify-between">
         {props.children}
       </div>
     </div>

@@ -4,7 +4,7 @@ import BannerMessage from "./BannerMessage";
 
 const HeroArea = () => {
   return (
-    <div class="bg-[url('/images/online%20learning.webp')] relative h-[800px] bg-no-repeat bg-cover bg-center">
+    <div className="relative h-[800px] bg-[url('/images/online%20learning.webp')] bg-cover bg-center bg-no-repeat">
       <Navigation />
       <BannerMessage />
     </div>

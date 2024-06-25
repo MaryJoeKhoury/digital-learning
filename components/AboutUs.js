@@ -3,16 +3,13 @@ import SectionTitle from "./SectionTitle";
 
 const AboutUs = (props) => {
   return (
-    <div
-      className=" alignement sm-alignement  xl:max-w-7xl m-auto "
-      id="about-us"
-    >
+    <div className="alignement sm-alignement m-auto xl:max-w-7xl" id="about-us">
       <SectionTitle title="About this digital learning platform" />
-      <div class="flex flex-row flex-wrap   justify-between cards mt-8 align-middle items-center">
-        <p class="text-justify text-xl flexgrowsm xl:w-2/5 desc group:w-1/2 mr-0.5">
+      <div className="cards mt-8 flex flex-row flex-wrap items-center justify-between align-middle">
+        <p className="flexgrowsm desc group:w-1/2 mb-5 mr-0.5 text-justify text-xl xl:w-2/5">
           {props.aboutDescription}
         </p>
-        <div class="w-1/2 flexgrowsm">
+        <div className="flexgrowimg w-1/2">
           <img src={props.aboutImage} />
         </div>
       </div>
