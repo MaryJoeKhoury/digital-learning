@@ -134,7 +134,7 @@ export default function Home() {
           aboutImage={info.aboutImage}
         />
       ))}
-      {/* <CardContainer>
+      <CardContainer>
         {planInfo.map((plan) => (
           <Card
             image={plan.image}
@@ -144,7 +144,7 @@ export default function Home() {
           />
         ))}
       </CardContainer>
-      <ContactContainer>
+      {/* <ContactContainer>
         {contactInputs.map((input) => (
           <ContactInput
             type={input.type}
