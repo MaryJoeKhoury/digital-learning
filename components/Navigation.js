@@ -75,7 +75,7 @@ const Navigation = () => {
           </li>
           <li>
             <a href="#custumor-review" className="text-black">
-              Customer Review
+              Pricing Cards
             </a>
           </li>
           <li>
