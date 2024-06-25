@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import Footer from "@/components/Footer";
 import HeroArea from "@/components/HeroArea";
 import AboutUs from "@/components/AboutUs";
+import TestContactForm from "@/components/TestContactForm";
 import CardContainer from "@/components/CardContainer";
 import ContactContainer from "@/components/ContactContainer";
 import ContactInput from "@/components/ContactInput";
@@ -133,7 +134,7 @@ export default function Home() {
           aboutImage={info.aboutImage}
         />
       ))}
-      <CardContainer>
+      {/* <CardContainer>
         {planInfo.map((plan) => (
           <Card
             image={plan.image}
@@ -151,7 +152,9 @@ export default function Home() {
             placeholder={input.placeholder}
           />
         ))}
-      </ContactContainer>
+      </ContactContainer> */}
+
+      <TestContactForm />
       <Footer />
     </div>
   );

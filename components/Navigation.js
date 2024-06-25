@@ -74,7 +74,7 @@ const Navigation = () => {
             </a>
           </li>
           <li>
-            <a href="#custumor-review" className="text-black">
+            <a href="#pricing-cards" className="text-black">
               Pricing Cards
             </a>
           </li>
