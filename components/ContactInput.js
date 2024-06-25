@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Button from "./Button";
 
 const ContactInput = (props) => {
@@ -7,7 +7,7 @@ const ContactInput = (props) => {
       <textarea
         placeholder={props.placeholder}
         required
-        className="w-full h-96 rounded-md my-4 outline-none border-slate-800 border-solid border-2 m-auto"
+        className="w-full h-96 rounded-md my-4 outline-none border-slate-800 border-solid border-2 m-auto p-3 "
       />
     );
 
@@ -18,7 +18,7 @@ const ContactInput = (props) => {
         name={props.name}
         placeholder={props.placeholder}
         required
-        className="w-full my-4 outline-none border-slate-800 border-solid border-b-2 "
+        className="w-full my-4 outline-none border-slate-800 border-solid border-b-2 p-3 "
       />
     </div>
   );

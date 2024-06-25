@@ -124,7 +124,7 @@ const planInfo = [
 
 export default function Home() {
   return (
-    <div className="scroll-smooth">
+    <div>
       <HeroArea />
 
       {aboutInfo.map((info) => (
