@@ -3,7 +3,7 @@ import React from "react";
 const Navigation = () => {
   return (
     <div>
-      <nav class="flex flex-row justify-between text-xl w-full z-1">
+      <nav class="flex flex-row justify-between text-xl w-full z-1 max-w-7xl m-auto">
         <div class="flex flex-col align-middle">
           <img src="./icons/e-learning-on-computer.svg" class="w-12" />
           <a href="#">
@@ -14,16 +14,36 @@ const Navigation = () => {
         </div>
         <ul class="flex flex-row list-none">
           <li class="mr-12">
-            <a href="#">Home</a>
+            <a
+              href="#"
+              className="relative text-white hover:text-brown-wood after:absolute after:bottom-[-10px] after:left-0 after:h-[3px] after:w-0 after:bg-brown-wood after:transition-all after:duration-700 hover:after:w-full "
+            >
+              Home
+            </a>
           </li>
           <li class="mr-12">
-            <a href="#about-us">About Us</a>
+            <a
+              href="#about-us"
+              className="relative text-white hover:text-brown-wood after:absolute after:bottom-[-10px] after:left-0 after:h-[3px] after:w-0 after:bg-brown-wood after:transition-all after:duration-700 hover:after:w-full "
+            >
+              About Us
+            </a>
           </li>
           <li class="mr-12">
-            <a href="#custumor-review">Pricing</a>
+            <a
+              href="#custumor-review"
+              className="relative text-white hover:text-brown-wood after:absolute after:bottom-[-10px] after:left-0 after:h-[3px] after:w-0 after:bg-brown-wood after:transition-all after:duration-700 hover:after:w-full "
+            >
+              Pricing
+            </a>
           </li>
           <li class="mr-0 ">
-            <a href="#contact-us">Contact Us</a>
+            <a
+              href="#contact-us"
+              className="relative text-white hover:text-brown-wood after:absolute after:bottom-[-10px] after:left-0 after:h-[3px] after:w-0 after:bg-brown-wood after:transition-all after:duration-700 hover:after:w-full "
+            >
+              Contact Us
+            </a>
           </li>
         </ul>
       </nav>
