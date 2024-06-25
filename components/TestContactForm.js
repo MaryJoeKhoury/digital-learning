@@ -16,7 +16,7 @@ const ContactContainer = (props) => {
   };
   return (
     <form
-      className="sm-alignement alignement m-auto xl:max-w-7xl"
+      className="sm-alignement alignement alignementxs m-auto xl:max-w-7xl"
       id="contact-us"
       onSubmit={onSubmit}
     >

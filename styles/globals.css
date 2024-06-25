@@ -35,6 +35,12 @@ html {
       @apply flex-grow;
     }
   }
+
+  @media (max-width: 385px) {
+    .alignementxs {
+      @apply m-auto max-w-72;
+    }
+  }
 }
 /* :root {
   --foreground-rgb: 0, 0, 0;
