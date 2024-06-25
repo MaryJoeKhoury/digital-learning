@@ -3,6 +3,28 @@
 @tailwind utilities;
 
 @layer components {
+  @media (min-width: 640px) and (max-width: 1024px) {
+    .alignement {
+      @apply max-w-2xl m-auto;
+    }
+    .flexgrow {
+      @apply flex-grow;
+    }
+  }
+  @media (max-width: 640px) {
+    .cards {
+      @apply justify-center;
+    }
+    .desc {
+      @apply w-1/2 mb-8;
+    }
+    .sm-alignement {
+      @apply max-w-sm;
+    }
+    .flexgrowsm {
+      @apply flex-grow;
+    }
+  }
 }
 /* :root {
   --foreground-rgb: 0, 0, 0;

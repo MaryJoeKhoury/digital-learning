@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "./Button";
 
 const ContactInput = (props) => {
   if (props.type === "textarea")
@@ -11,13 +12,13 @@ const ContactInput = (props) => {
     );
 
   return (
-    <div className="  ">
+    <div className=" w-full ">
       <input
         type={props.type}
         name={props.name}
         placeholder={props.placeholder}
         required
-        className="w-full my-4 outline-none border-slate-800 border-solid border-b-2"
+        className="w-full my-4 outline-none border-slate-800 border-solid border-b-2 "
       />
     </div>
   );
