@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 
 const Navigation = () => {
   const [menuActive, setMenuActive] = useState(false);
@@ -10,7 +11,7 @@ const Navigation = () => {
 
   useEffect(() => {
     const changeNavBackGround = () => {
-      const isVisible = window.scrollY >= 76;
+      const isVisible = window.scrollY >= 84;
       setNavBar(isVisible);
     };
     window.addEventListener("scroll", changeNavBackGround);
@@ -21,19 +22,19 @@ const Navigation = () => {
   return (
     <div
       className={
-        navBar
-          ? "fixed z-10 w-full bg-brown-wood bg-opacity-70"
-          : "fixed z-10 w-full"
+        navBar ? "fixed z-10 w-full bg-[#ead5c3]" : "fixed z-10 w-full"
       }
     >
       <nav className="z-1 alignement m-auto hidden w-full flex-row items-center justify-between text-xl sm:flex xl:max-w-7xl">
-        <div className="flex flex-col align-middle">
-          <img
-            src="./icons/e-learning-on-computer.svg"
-            className="w-12"
-            alt="E-learning logo"
-          />
+        <div className="flex flex-col items-center justify-center py-1 align-middle">
           <a href="#">
+            <img
+              src="./icons/e-learning-on-computer.svg"
+              className="w-12"
+              alt="E-learning logo"
+            />
+          </a>
+          <a href="/">
             <p>
               E-<span className="font-bold text-black">Learning</span>
             </p>
@@ -42,7 +43,7 @@ const Navigation = () => {
         <ul className="flex list-none flex-row">
           <li className="mr-12">
             <a
-              href="#"
+              href="/"
               className={
                 navBar
                   ? "relative font-bold text-black after:absolute after:bottom-[-10px] after:left-0 after:h-[3px] after:w-0 after:bg-black after:transition-all after:duration-700 hover:text-black hover:after:w-full"
@@ -54,7 +55,7 @@ const Navigation = () => {
           </li>
           <li className="mr-12">
             <a
-              href="#about-us"
+              href="/about"
               className={
                 navBar
                   ? "relative font-bold text-black after:absolute after:bottom-[-10px] after:left-0 after:h-[3px] after:w-0 after:bg-black after:transition-all after:duration-700 hover:text-black hover:after:w-full"
@@ -91,28 +92,28 @@ const Navigation = () => {
         </ul>
       </nav>
       <div
-        className={`fixed right-0 top-0 flex h-screen w-full max-w-xs transform flex-col items-center justify-center bg-brown-wood bg-opacity-80 text-center text-2xl sm:hidden ${
+        className={`fixed right-0 top-0 flex h-screen w-full max-w-xs transform flex-col items-center justify-center bg-[#ead5c3] text-center text-2xl sm:hidden ${
           menuActive ? "translate-x-0" : "translate-x-full"
         } z-10 transition-transform duration-300 ease-in-out`}
       >
         <ul className="space-y-10">
           <li>
-            <a href="#" className="text-black">
+            <a href="#" className="font-bold text-black">
               Home
             </a>
           </li>
           <li>
-            <a href="#about-us" className="text-black">
+            <a href="#about-us" className="font-bold text-black">
               About Us
             </a>
           </li>
           <li>
-            <a href="#pricing-cards" className="text-black">
-              Pricing Cards
+            <a href="#pricing-cards" className="font-bold text-black">
+              Pricing
             </a>
           </li>
           <li>
-            <a href="#contact-us" className="text-black">
+            <a href="#contact-us" className="font-bold text-black">
               Contact Us
             </a>
           </li>

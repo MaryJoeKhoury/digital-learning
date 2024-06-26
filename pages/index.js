@@ -20,32 +20,32 @@ const aboutInfo = [
   },
 ];
 
-const contactInputs = [
-  {
-    id: 1,
-    name: "name",
-    type: "text",
-    placeholder: "Enter your full name",
-  },
-  {
-    id: 2,
-    name: "email",
-    type: "email",
-    placeholder: "Enter your email",
-  },
-  {
-    id: 3,
-    name: "phone",
-    type: "phone",
-    placeholder: "Enter your phone number",
-  },
-  {
-    id: 4,
-    name: "",
-    type: "textarea",
-    placeholder: "Leave a message",
-  },
-];
+// const contactInputs = [
+//   {
+//     id: 1,
+//     name: "name",
+//     type: "text",
+//     placeholder: "Enter your full name",
+//   },
+//   {
+//     id: 2,
+//     name: "email",
+//     type: "email",
+//     placeholder: "Enter your email",
+//   },
+//   {
+//     id: 3,
+//     name: "phone",
+//     type: "phone",
+//     placeholder: "Enter your phone number",
+//   },
+//   {
+//     id: 4,
+//     name: "",
+//     type: "textarea",
+//     placeholder: "Leave a message",
+//   },
+// ];
 
 const planInfo = [
   {

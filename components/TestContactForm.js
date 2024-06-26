@@ -56,7 +56,7 @@ const ContactContainer = (props) => {
         <h5 className="mb-4 text-red-500">{errorMessage}</h5>
         <input
           type="submit"
-          className="mb-4 w-1/2 rounded-md bg-slate-200 px-3 py-4 text-black transition-transform hover:translate-y-[-0.25rem] hover:bg-slate-300 hover:shadow-lg hover:shadow-indigo-500/30"
+          className="mb-4 rounded-md bg-slate-200 px-7 py-4 text-black transition-transform hover:translate-y-[-0.25rem] hover:bg-slate-300 hover:shadow-lg hover:shadow-indigo-500/30"
         />
       </div>
     </form>
