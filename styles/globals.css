@@ -36,9 +36,9 @@ html {
     }
   }
 
-  @media (max-width: 385px) {
+  @media (max-width: 475px) {
     .alignementxs {
-      @apply m-auto max-w-72;
+      @apply m-auto max-w-sm px-6;
     }
   }
 }

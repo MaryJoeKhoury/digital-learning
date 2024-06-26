@@ -8,6 +8,7 @@ import CardContainer from "@/components/CardContainer";
 import ContactContainer from "@/components/ContactContainer";
 import ContactInput from "@/components/ContactInput";
 import Card from "@/components/Card";
+import SectionTitle from "@/components/SectionTitle";
 
 // const inter = Inter({ subsets: ["latin"] });
 
@@ -134,6 +135,7 @@ export default function Home() {
           aboutImage={info.aboutImage}
         />
       ))}
+      <SectionTitle title="Princing Cards" id="pricing-cards" />
       <CardContainer>
         {planInfo.map((plan) => (
           <Card

@@ -25,7 +25,7 @@ const Navigation = () => {
         navBar ? "fixed z-10 w-full bg-[#ead5c3]" : "fixed z-10 w-full"
       }
     >
-      <nav className="z-1 alignement m-auto hidden w-full flex-row items-center justify-between text-xl sm:flex xl:max-w-7xl">
+      <nav className="z-1 alignement m-auto hidden w-full flex-row items-center justify-between text-xl sm:px-12 md:flex md:px-0 lg:px-12 xl:max-w-7xl xl:px-3">
         <div className="flex flex-col items-center justify-center py-1 align-middle">
           <a href="#">
             <img
@@ -91,8 +91,9 @@ const Navigation = () => {
           </li>
         </ul>
       </nav>
+
       <div
-        className={`fixed right-0 top-0 flex h-screen w-full max-w-xs transform flex-col items-center justify-center bg-[#ead5c3] text-center text-2xl sm:hidden ${
+        className={`fixed right-0 top-0 flex h-screen w-full max-w-xs transform flex-col items-center justify-center bg-[#ead5c3] text-center text-2xl md:hidden ${
           menuActive ? "translate-x-0" : "translate-x-full"
         } z-10 transition-transform duration-300 ease-in-out`}
       >
@@ -119,7 +120,7 @@ const Navigation = () => {
           </li>
         </ul>
       </div>
-      <nav className="fixed right-0 top-0 z-20 p-4 sm:hidden">
+      <nav className="fixed right-0 top-0 z-20 p-4 md:hidden">
         <div
           className={`relative h-12 w-10 cursor-pointer ${
             menuActive ? "active" : ""

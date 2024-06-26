@@ -2,13 +2,9 @@ import React from "react";
 
 const Features = (props) => {
   return (
-    <>
-      <img src={props.icon} className="w-40" />
-      <div className="w-[30%] py-3">
-        <p className="text-2xl font-bold">{props.title}</p>
-        <h5 className="text-justify">{props.description}</h5>
-      </div>
-    </>
+    <div className="flexgrow group mt-12 flex w-96 flex-col items-center justify-center hover:cursor-pointer">
+      {props.children}
+    </div>
   );
 };
 
