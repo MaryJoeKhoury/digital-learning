@@ -131,12 +131,14 @@ export default function Home() {
 
       {aboutInfo.map((info) => (
         <AboutUs
+          title="About this digital learning platform"
+          id="about-us"
           aboutDescription={info.aboutDescription}
           aboutImage={info.aboutImage}
         />
       ))}
-      <SectionTitle title="Princing Cards" id="pricing-cards" />
-      <CardContainer>
+
+      <CardContainer title="Pricing Cards">
         {planInfo.map((plan) => (
           <Card
             image={plan.image}

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
-const Navigation = () => {
+const NavBar = () => {
   const [menuActive, setMenuActive] = useState(false);
   const [navBar, setNavBar] = useState(false);
 
@@ -137,4 +137,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+export default NavBar;

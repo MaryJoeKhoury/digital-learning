@@ -8,8 +8,11 @@ html {
 @tailwind utilities;
 
 @layer components {
+  @media (min-width: 1280px) {
+  }
   @media (min-width: 640px) and (max-width: 1024px) {
-    .alignement {
+    .alignement,
+    .swiper {
       @apply m-auto max-w-2xl;
     }
     .flexgrow {
@@ -37,9 +40,19 @@ html {
   }
 
   @media (max-width: 475px) {
-    .alignementxs {
+    .alignementxs,
+    .swiper {
       @apply m-auto max-w-sm px-6;
     }
+  }
+
+  @media (min-width: 1280px) {
+    .swiper {
+      @apply m-auto max-w-7xl px-3;
+    }
+  }
+  .swiper {
+    @apply xs:px-12 py-0 sm:px-12 md:px-0 lg:px-12;
   }
 }
 /* :root {
