@@ -8,6 +8,12 @@ html {
 @tailwind utilities;
 
 @layer components {
+  .mySwiper {
+    @apply lg:max-w-7xl;
+  }
+  /* .mySwiper .swiper-slide {
+    @apply ml-[18px];
+  } */
   @media (max-width: 475px) {
     .xs-alignement {
       @apply m-auto max-w-sm px-8;
@@ -18,6 +24,9 @@ html {
     .card-container-xs {
       @apply w-72 !important;
     }
+    /* .mySwiper .swiper-slide {
+      @apply ml-[18px];
+    } */
   }
   /* .mySwiper .swiper-slide {
     @apply mr-28;

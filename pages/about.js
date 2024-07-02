@@ -149,9 +149,8 @@ const degreeInfo = [
 
 export default function About() {
   const [filteredProfession, setFilteredProfession] = useState(null);
-  const [swiperRef, setSwiperRef] = useState(null);
 
-  console.log(filteredProfession);
+  // console.log(filteredProfession.length);
 
   useEffect(() => {
     setFilteredProfession(teachersInfo);
@@ -169,6 +168,8 @@ export default function About() {
 
     setFilteredProfession(filteredData);
   }
+
+  // const isThreeCards = 3;
   return (
     <div>
       <NavBar />
@@ -181,7 +182,10 @@ export default function About() {
           />
         </>
       ))}
-      <CardContainer title="Explore the world with us">
+      <CardContainer
+        title="Explore the world with us"
+        // className="cards mt-4 flex flex-row flex-wrap gap-2 align-middle lg:justify-between"
+      >
         {featuresInfo.map((info) => (
           <Feature
             icon={info.icon}
@@ -205,7 +209,13 @@ export default function About() {
           <option value="english teacher">English Teacher</option>
         </select>
       </AlignContainer>
-      <CardContainer>
+      <CardContainer
+        className={`cards mt-4 flex flex-row flex-wrap gap-2 align-middle ${
+          filteredProfession && filteredProfession.length >= 3
+            ? "justify-between"
+            : ""
+        }`}
+      >
         {/* <button className="" value={type.value} onClick={handleProfession}>
             {type.name}
           </button>  */}
@@ -235,24 +245,24 @@ export default function About() {
         className="mySwiper"
         breakpoints={{
           200: {
-            slidesPerView: 1,
+            slidesPerView: 3,
             spaceBetween: 300,
           },
           320: {
-            slidesPerView: 2,
-            spaceBetween: 300,
+            slidesPerView: 3,
+            spaceBetween: 400,
           },
           480: {
-            slidesPerView: 2,
-            spaceBetween: 300,
+            slidesPerView: 3,
+            spaceBetween: 400,
           },
           640: {
-            slidesPerView: 2,
-            spaceBetween: 200,
+            slidesPerView: 3,
+            spaceBetween: 400,
           },
           768: {
-            slidesPerView: 2,
-            spaceBetween: 100,
+            slidesPerView: 3,
+            spaceBetween: 400,
           },
           1024: {
             slidesPerView: 3,

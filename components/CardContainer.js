@@ -24,10 +24,19 @@ const CardContainer = (props) => {
   //       </div>
   //     </AlignContainer>
   //   );
+
   return (
     <AlignContainer>
       <SectionTitle title={props.title} id={props.id} />
-      <div className="cards mt-4 flex flex-row flex-wrap gap-2 align-middle lg:justify-between">
+      {/* <div className="cards mt-4 flex flex-row flex-wrap gap-2 align-middle lg:justify-between">
+        {props.children}
+      </div> */}
+      <div
+        className={
+          props.className ||
+          "cards mt-4 flex flex-row flex-wrap gap-2 align-middle lg:justify-between"
+        }
+      >
         {props.children}
       </div>
     </AlignContainer>

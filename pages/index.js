@@ -140,7 +140,10 @@ export default function Home() {
         />
       ))}
 
-      <CardContainer title="Pricing Cards">
+      <CardContainer
+        title="Pricing Cards"
+        // className="cards mt-4 flex flex-row flex-wrap gap-2 align-middle lg:justify-between"
+      >
         {planInfo.map((plan) => (
           <Card
             image={plan.image}
