@@ -68,16 +68,12 @@ const NavBar = () => {
               </Link>
             </li>
             <li className="mr-12">
-              <a
-                href="#pricing-cards"
-                className={
-                  navBar
-                    ? "relative font-bold text-black after:absolute after:bottom-[-10px] after:left-0 after:h-[3px] after:w-0 after:bg-black after:transition-all after:duration-700 hover:text-black hover:after:w-full"
-                    : "relative font-bold text-white after:absolute after:bottom-[-10px] after:left-0 after:h-[3px] after:w-0 after:bg-white after:transition-all after:duration-700 hover:text-white hover:after:w-full"
-                }
+              <Link
+                href="/pricing"
+                className={`link relative font-bold ${pathname === "/pricing" ? (navBar ? "text-black underline after:bg-black hover:text-black hover:no-underline" : "text-white underline after:bg-white hover:text-white hover:no-underline") : navBar ? "text-black after:bg-black hover:text-black" : "text-white after:bg-white hover:text-white"} after:absolute after:bottom-[-10px] after:left-0 after:h-[3px] after:w-0 after:transition-all after:duration-700 hover:after:w-full`}
               >
                 Pricing
-              </a>
+              </Link>
             </li>
             <li className="mr-0">
               <a

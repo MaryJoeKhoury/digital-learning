@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <div>
-      <footer className="bg-[#ead5c3] p-8">
+      <footer className="mt-4 bg-[#ead5c3] p-8">
         <ul className="flex flex-row justify-center">
           <li className="mr-2 list-none p-2">
             <a

@@ -4,7 +4,7 @@ import AlignContainer from "./AlignContainer";
 const LandingSection = (props) => {
   return (
     // <div className={` bg-[${props.bgColor}] flex-wrap`}>
-    <div className="flex-wrap bg-[#fdd5b5]">
+    <div className="mb-4 flex-wrap bg-[#fdd5b5]">
       <AlignContainer>
         <div className="flex flex-col items-center pt-24 sm:px-12 md:flex-row">
           <div className="w-full flex-grow md:w-1/2">
