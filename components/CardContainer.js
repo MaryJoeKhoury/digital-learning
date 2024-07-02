@@ -1,14 +1,36 @@
 import React from "react";
 import SectionTitle from "./SectionTitle";
+import AlignContainer from "./AlignContainer";
+import { handleProfession } from "@/pages/about";
 
 const CardContainer = (props) => {
+  // if (props.id === "teachers")
+  //   return (
+  //     <AlignContainer>
+  //       <SectionTitle title={props.title} id={props.id} />
+  //       <select
+  //         name="cars"
+  //         id="cars"
+  //         onClick={handleProfession}
+  //         className="rounded-xl bg-[#ffefe2] px-4 py-2 outline-none"
+  //       >
+  //         <option value="all">All</option>
+  //         <option value="software engineer">Software Engineer</option>
+  //         <option value="graphic designer">Graphic Designer</option>
+  //         <option value="english teacher">English Teacher</option>
+  //       </select>
+  //       <div className="cards mt-4 flex flex-row flex-wrap gap-2 align-middle lg:justify-between">
+  //         {props.children}
+  //       </div>
+  //     </AlignContainer>
+  //   );
   return (
-    <div className="alignement alignementxs xs:px-12 m-auto sm:px-12 md:px-0 lg:px-12 xl:max-w-7xl xl:px-3">
-      <SectionTitle title={props.title} />
+    <AlignContainer>
+      <SectionTitle title={props.title} id={props.id} />
       <div className="cards mt-4 flex flex-row flex-wrap gap-2 align-middle lg:justify-between">
         {props.children}
       </div>
-    </div>
+    </AlignContainer>
   );
 };
 

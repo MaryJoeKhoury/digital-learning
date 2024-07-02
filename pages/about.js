@@ -12,6 +12,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import AlignContainer from "@/components/AlignContainer";
 const aboutLanding = [
   {
     image: "/images/1200x0.webp",
@@ -27,6 +28,7 @@ const featuresInfo = [
     title: "Success Stories",
     description:
       "We are proud of the impact we have made on our learners. Our success stories highlight the transformative experiences our courses have provided, helping individuals achieve their personal and professional goals.",
+    link: "#teachers",
   },
   {
     id: 2,
@@ -34,6 +36,7 @@ const featuresInfo = [
     title: "Our Students",
     description:
       "Our learners love what we do. Our students reviews reflect the high quality of our courses and the expertise of our talented instructors, showcasing the value and impact of our educational offerings on their growth.",
+    link: "#students",
   },
   {
     id: 3,
@@ -41,6 +44,7 @@ const featuresInfo = [
     title: "Trusted Degrees",
     description:
       "Our certifications are recognized and trusted by employers and educational institutions around the world. Earning a certification from E-LEARNING means you have demonstrated proficiency and dedication to your field of study.",
+    link: "#degree",
   },
 ];
 
@@ -55,31 +59,31 @@ const teachersInfo = [
     id: 2,
     image: "/images/teacher-2.webp",
     name: "Joe Thompson",
-    description: "Sotware Engineer",
+    description: "Software Engineer",
   },
   {
     id: 3,
     image: "/images/male-ai.jpg",
     name: "John Doe",
-    description: " English Teacher",
+    description: "English Teacher",
   },
   {
     id: 4,
     image: "/images/teacher-ai.jpg",
     name: "John Doe",
-    description: " English Teacher",
+    description: "English Teacher",
   },
   {
     id: 5,
     image: "/images/teacher-ai.jpg",
     name: "John Doe",
-    description: " Graphic Designer",
+    description: "Graphic Designer",
   },
   {
     id: 6,
     image: "/images/teacher-2.webp",
     name: "John Doe",
-    description: " Graphic Designer",
+    description: "Graphic Designer",
   },
 ];
 
@@ -136,27 +140,35 @@ const degreeInfo = [
   },
 ];
 //testing
-const buttons = [
-  { name: "All", value: "all" },
-  { name: "Software Engineer", value: "software engineer" },
-  { name: "English Teacher", value: "english teacher" },
-  { name: "Graphic Designer", value: "graphic designer" },
-];
+// const buttons = [
+//   { name: "All", value: "all" },
+//   { name: "Software Engineer", value: "software engineer" },
+//   { name: "English Teacher", value: "english teacher" },
+//   { name: "Graphic Designer", value: "graphic designer" },
+// ];
 
 export default function About() {
   const [filteredProfession, setFilteredProfession] = useState(null);
+  const [swiperRef, setSwiperRef] = useState(null);
+
+  console.log(filteredProfession);
+
   useEffect(() => {
     setFilteredProfession(teachersInfo);
   }, []);
 
-  const handleProfession = (e) => {
+  function handleProfession(e) {
     let typeTeacher = e.target.value;
-    typeTeacher !== "all"
-      ? setFilteredProfession(typeTeacher)
-      : setFilteredProfession(teachersInfo);
-  };
 
-  const [swiperRef, setSwiperRef] = useState(null);
+    if (typeTeacher === "all") return setFilteredProfession(teachersInfo);
+
+    const filteredData = teachersInfo.filter(
+      (teacherInfo) =>
+        teacherInfo.description.toLowerCase() === typeTeacher.toLowerCase(),
+    );
+
+    setFilteredProfession(filteredData);
+  }
   return (
     <div>
       <NavBar />
@@ -175,35 +187,45 @@ export default function About() {
             icon={info.icon}
             title={info.title}
             description={info.description}
+            link={info.link}
           />
         ))}
       </CardContainer>
-      {buttons &&
-        buttons.map((type) => (
-          <>
-            <button
-              className="mx-8 my-8"
-              value={type.value}
-              onClick={handleProfession}
-            >
-              {type.name}
-            </button>
-          </>
-        ))}
+      <SectionTitle title="Meet Our Talented Team" id="teachers" />
+      <AlignContainer>
+        <select
+          name="cars"
+          id="cars"
+          onClick={handleProfession}
+          className="m-auto mt-4 rounded-xl bg-[#ffefe2] px-4 py-2 outline-none"
+        >
+          <option value="all">All</option>
+          <option value="software engineer">Software Engineer</option>
+          <option value="graphic designer">Graphic Designer</option>
+          <option value="english teacher">English Teacher</option>
+        </select>
+      </AlignContainer>
+      <CardContainer>
+        {/* <button className="" value={type.value} onClick={handleProfession}>
+            {type.name}
+          </button>  */}
 
-      <CardContainer title="Meet Our Talented Team">
-        {teachersInfo.map((info) => (
+        {filteredProfession?.map((type) => (
+          // <ul>
+          //   <li>{type.name}</li>
+          // </ul>
           <PeopleCard
-            image={info.image}
-            name={info.name}
-            description={info.description}
+            image={type.image}
+            name={type.name}
+            description={type.description}
           />
         ))}
       </CardContainer>
-      <SectionTitle title="Our Students Reviews" />
+
+      <SectionTitle title="Our Students Reviews" id="students" />
       <Swiper
-        slidesPerView={3}
-        spaceBetween={90}
+        slidesPerView={2} // default slides per view
+        spaceBetween={0}
         loop={true}
         pagination={{
           clickable: true,
@@ -211,6 +233,37 @@ export default function About() {
         navigation={true}
         modules={[Pagination, Navigation]}
         className="mySwiper"
+        breakpoints={{
+          200: {
+            slidesPerView: 1,
+            spaceBetween: 300,
+          },
+          320: {
+            slidesPerView: 2,
+            spaceBetween: 300,
+          },
+          480: {
+            slidesPerView: 2,
+            spaceBetween: 300,
+          },
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 200,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 100,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 190,
+          },
+
+          1280: {
+            slidesPerView: 3,
+            spaceBetween: 40,
+          },
+        }}
       >
         <CardContainer>
           {studentsInfo.map((info) => (
@@ -227,7 +280,7 @@ export default function About() {
       {degreeInfo.map((info) => (
         <AboutUs
           title="International Degree"
-          id="about-us"
+          id="degree"
           aboutDescription={info.description}
           aboutImage={info.image}
         />

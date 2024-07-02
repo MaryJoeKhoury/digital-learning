@@ -8,13 +8,25 @@ html {
 @tailwind utilities;
 
 @layer components {
-  @media (min-width: 1280px) {
+  @media (max-width: 475px) {
+    .xs-alignement {
+      @apply m-auto max-w-sm px-8;
+    }
+    /* .mySwiper {
+      @apply p-8 !important;
+    } */
+    .card-container-xs {
+      @apply w-72 !important;
+    }
   }
+  /* .mySwiper .swiper-slide {
+    @apply mr-28;
+  } */
   @media (min-width: 640px) and (max-width: 1024px) {
-    .alignement,
-    .swiper {
+    .alignement {
       @apply m-auto max-w-2xl;
     }
+
     .flexgrow {
       @apply flex-grow;
     }
@@ -37,22 +49,9 @@ html {
     .flexgrowsm {
       @apply flex-grow;
     }
-  }
-
-  @media (max-width: 475px) {
-    .alignementxs,
-    .swiper {
-      @apply m-auto max-w-sm px-6;
-    }
-  }
-
-  @media (min-width: 1280px) {
-    .swiper {
-      @apply m-auto max-w-7xl px-3;
-    }
-  }
-  .swiper {
-    @apply xs:px-12 py-0 sm:px-12 md:px-0 lg:px-12;
+    /* .mySwiper .swiper-slide {
+      @apply mr-56;
+    } */
   }
 }
 /* :root {

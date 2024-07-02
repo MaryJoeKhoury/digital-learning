@@ -5,10 +5,10 @@ import HeroArea from "@/components/HeroArea";
 import AboutUs from "@/components/AboutUs";
 import TestContactForm from "@/components/TestContactForm";
 import CardContainer from "@/components/CardContainer";
-import ContactContainer from "@/components/ContactContainer";
-import ContactInput from "@/components/ContactInput";
+
 import Card from "@/components/Card";
-import SectionTitle from "@/components/SectionTitle";
+
+import SeeMore from "@/components/SeeMore";
 
 // const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +18,7 @@ const aboutInfo = [
       "Welcome to our digital learning platform, where we are dedicated empowering individuals through accessible and innovative education. Our mission is to provide high-quality courses that cater to diverse learning needs, ensuring flexibility and practical skills development. With a focus on interactive learning experiences and expert-led instruction, we aim to inspire lifelong learning and professional growth. Join us to explore a wide range of courses designed to enhance your knowledge and career prospects",
     aboutImage:
       "/images/digital-learning-initiatives-in-cbse-curriculum-jpg.webp",
+    link: "/about",
   },
 ];
 
@@ -135,6 +136,7 @@ export default function Home() {
           id="about-us"
           aboutDescription={info.aboutDescription}
           aboutImage={info.aboutImage}
+          link={info.link}
         />
       ))}
 
@@ -159,6 +161,7 @@ export default function Home() {
       </ContactContainer> */}
 
       <TestContactForm />
+
       <Footer />
     </div>
   );
