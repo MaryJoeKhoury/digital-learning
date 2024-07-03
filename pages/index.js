@@ -163,8 +163,6 @@ export default function Home() {
         ))}
       </ContactContainer> */}
 
-      <TestContactForm />
-
       <Footer />
     </div>
   );

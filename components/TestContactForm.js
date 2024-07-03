@@ -33,7 +33,7 @@ const ContactContainer = (props) => {
               name="phone"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
-              placeholder="enter you phone number"
+              placeholder="Enter you phone number"
               required
               className="my-4 w-full border-b-2 border-solid border-slate-800 p-3 outline-none"
             />
@@ -41,13 +41,13 @@ const ContactContainer = (props) => {
             <input
               type="email"
               name="email"
-              placeholder="enter your email"
+              placeholder="Enter your email"
               required
               className="my-4 w-full border-b-2 border-solid border-slate-800 p-3 outline-none"
             />
           </div>
           <textarea
-            placeholder="leave a message"
+            placeholder="Leave a message"
             required
             className="m-auto my-4 h-96 w-full rounded-md border-2 border-solid border-slate-800 p-3 outline-none"
           />

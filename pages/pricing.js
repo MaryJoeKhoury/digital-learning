@@ -8,7 +8,7 @@ const pricingLanding = [
   {
     image: "/images/pricing.png",
 
-    text: "Affordable Prices for Higth Quality Learning",
+    text: "Affordable Prices for High Quality Learning",
   },
 ];
 
