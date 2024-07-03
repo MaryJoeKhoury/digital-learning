@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Footer from "@/components/Footer";
 import NavBar from "@/components/NavBar";
 import LandingSection from "@/components/LandingSection";
@@ -7,9 +8,10 @@ const pricingLanding = [
   {
     image: "/images/pricing.png",
 
-    text: "Affordable Pricing for Best Learning Quality",
+    text: "Affordable Prices for Higth Quality Learning",
   },
 ];
+
 const accordionInfo = [
   {
     id: "1",
@@ -36,21 +38,29 @@ const accordionInfo = [
       "We offer special discounts for students and groups. To qualify, students may need to provide valid student identification, while groups may need to meet a minimum number of members. Applying for these discounts is straightforward and can be done during the subscription process. Terms and conditions apply.",
   },
 ];
-export default function Home() {
+
+export default function Pricing() {
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const handleItemClick = (index) => {
+    setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
+  };
   return (
-    <div>
+    <div className="">
       <NavBar />
-      {pricingLanding.map((info, i) => (
+      {pricingLanding.map((info) => (
         <>
-          <LandingSection
-            image={info.image}
-            text={info.text}
-            // bgColor="#fdd5b5"
-          />
+          <LandingSection image={info.image} text={info.text} />
         </>
       ))}
       {accordionInfo.map((info) => (
-        <Accordion title={info.title} details={info.details} />
+        <Accordion
+          key={info.id}
+          title={info.title}
+          details={info.details}
+          isOpen={activeIndex === info.id}
+          onClick={() => handleItemClick(info.id)}
+        />
       ))}
 
       <Footer />
