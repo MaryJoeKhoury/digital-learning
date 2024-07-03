@@ -103,14 +103,14 @@ const NavBar = () => {
             </Link>
           </li>
           <li>
-            <a href="#pricing-cards" className="font-bold text-black">
+            <Link href="/pricing" className="font-bold text-black">
               Pricing
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#contact-us" className="font-bold text-black">
+            <Link href="/contact" className="font-bold text-black">
               Contact Us
-            </a>
+            </Link>
           </li>
         </ul>
       </div>
